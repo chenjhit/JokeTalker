@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - joke_talker@localhost" uuid="5d724148-1b46-490b-aa7c-1c80caa89e28">
+    <database-info product="MySQL" version="5.1.51-community" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="joke_talker"/>
+    <table name="joke" schema="" catalog="joke_talker" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="content" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="website" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="site_index" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="site_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="create_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="site_id" columns="site_id" ref-table="web_site" ref-schema="" ref-catalog="joke_talker" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id_idx" unique="false" columns="site_id"/>
+    </table>
+    <table name="web_site" schema="" catalog="joke_talker" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="web_address" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="site_id" table="joke" schema="" catalog="joke_talker" columns="site_id"/>
+    </table>
+  </data-source>
+</component>

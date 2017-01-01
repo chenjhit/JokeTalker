@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>我的主页</title> 
+<link rel="icon" href="home.png" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="test.css">
+
+<script src="test.js"></script>
+</head>
+
+
+<body onload="startTime()">
+<p id="showDate"></p>
+<form name="inputSearchContent" action="/HelloForm" method="POST" target="_blank">
+<input id="baiduSeachContent" type="text" name="content" onchange="setLink()">
+<input type="submit" value="搜索">
+</form>
+<form name="test" action="/pages/test.jsp" method="GET" target="_blank">
+  <input id="test" type="text" name="content" onchange="setLink()">
+  <input type="submit" value="Test">
+</form>
+<button>
+<a id="baiduLink" href="https://www.baidu.com" target="_blank">百度搜索</a>
+</button>
+
+<ul id="thefourlist">
+  <li id="bird"><a href="https://www.baidu.com/s?word=朱雀" target="_blank"></a></li>
+  <li id="turtle"><a href="https://www.baidu.com/s?word=玄武" target="_blank"></a></li>
+  <li id="dragon"><a href="https://www.baidu.com/s?word=青龙" target="_blank"></a></li>
+  <li id="tiger"><a href="https://www.baidu.com/s?word=白虎" target="_blank"></a></li>
+</ul>
+
+<img src="theFour.jpg" width="250px" height="188px">
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+<p id="about">Hello World!</p>
+<p id="pOut">---。</p>
+<a href='https://www.baidu.com/s?word=123' target="_blank">hhhhhhhhhhhhhhhhhhhhhh</a>
+<button onclick="writeText()">ceeeeeee</button>
+<p style="font-size:40px">这个段落采用CSS样式化。</p>
+<div class=postText>
+
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+
+<img id="bt" onclick="changeImage()" src="bird.jpg" width="250" height="200"></img>
+
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+<p>这个段落采用CSS样式化。</p>
+</body>
+</html>

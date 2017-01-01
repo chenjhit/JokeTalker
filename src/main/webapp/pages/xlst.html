@@ -1,0 +1,46 @@
+<html>
+<head>
+<script>
+
+function displayResult()
+{
+Var fso=new ActiveXObject(Scripting.FileSystemObject); 
+alert("0000");
+Var f=fso.opentextfile("cdcatalog.xml",1,true); 
+alert(f.ReadAll());
+xml=loadXMLDoc("cdcatalog.xml");
+alert(xml);
+document.getElementById("hhh").innerHTML = xml;
+xsl=loadXMLDoc("cdcatalog.xsl");
+// code for IE
+if (window.ActiveXObject)
+  {
+  ex=xml.transformNode(xsl);
+  document.getElementById("example").innerHTML=ex;
+  }
+// code for Mozilla, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+  {
+  xsltProcessor=new XSLTProcessor();
+  xsltProcessor.importStylesheet(xsl);
+  resultDocument = xsltProcessor.transformToFragment(xml,document);
+  document.getElementById("example").appendChild(resultDocument);
+  }
+}
+
+function loadXMLDoc(dname)
+{
+Var fso=new ActiveXObject(Scripting.FileSystemObject); 
+alert("0000");
+Var f=fso.opentextfile(dname,1,true); 
+return f.ReadAll;
+}
+
+</script>
+</head>
+<body onload="displayResult()">
+<h1>kkkk</h1>
+<div id="example"></div>
+<div id="hhh"></div>
+</body>
+</html>
